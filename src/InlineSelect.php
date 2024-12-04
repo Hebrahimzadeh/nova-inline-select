@@ -77,6 +77,12 @@ class InlineSelect extends Select
         return $this->withMeta(['inlineIndex' => true]);
     }
 
+
+    public function updateMessage($message): InlineSelect
+    {
+        return $this->withMeta(['updateMessage' => $message]);
+    }
+
     /**
      * Enable inline editing on index view.
      */
