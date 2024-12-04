@@ -33,8 +33,8 @@ export default {
             return Nova.request().post(`/nova-api/${this.resourceName}/${this.resourceId}`, formData)
                 .then(() => {
                     let label = find(this.field.options, option => option.value === this.value).label;
-
-                    Nova.success(`${this.field.name} updated to "${label}"`);
+                    let message = this.field?.updateMessage ?? `${this.field.name} updated to "${label}"`;
+                    Nova.success(message);
                 }, (response) => {
                     Nova.error(response);
                 })
